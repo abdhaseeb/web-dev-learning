@@ -30,4 +30,6 @@ const obj = {
   }
 };
 
-setTimeout(obj.greet.bind(obj), 1000);
+const sayHi = obj.greet.bind(obj);
+sayHi();
+//setTimeout(obj.greet.bind(obj), 1000);
