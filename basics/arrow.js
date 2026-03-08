@@ -23,13 +23,13 @@
 // const fn = obj.method();
 // fn();
 
-const obj = {
-  name: "Haseeb",
-  greet() {
-    console.log(this.name);
-  }
-};
+// const obj = {
+//   name: "Haseeb",
+//   greet() {
+//     console.log(this.name);
+//   }
+// };
 
-const sayHi = obj.greet.bind(obj);
-sayHi();
-//setTimeout(obj.greet.bind(obj), 1000);
+// const sayHi = obj.greet.bind(obj);
+// sayHi();
+// //setTimeout(obj.greet.bind(obj), 1000);
