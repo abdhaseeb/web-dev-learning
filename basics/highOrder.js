@@ -38,6 +38,21 @@ const obj = {
 // const arr =  ["Haseeb", "Abdul", 90, 80, 70];
 // arr.forEach( (e) => { return console.log(e+'x')} )  //same o/p
 // arr.forEach( (e) => ( console.log(e+'x') ) )        //same o/p
+const objArr = [
+    {
+        name:"Haseeb",
+        numb: "8187084637"
+    },
+    {
+        name:"Ishaq Bael",
+        numb: "9032140415"
+    },
+    {
+        name:"AR",
+        numb: "8031094637"
+    }
+]
+objArr.forEach( (obj) => ( console.log(obj.name) ));
 
 
 //**MAP** : unique; remembers the order of insertion of keys; any value may be used either a key or a value 
