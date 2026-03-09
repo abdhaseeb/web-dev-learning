@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bg-grey{
+         background-color: grey;
+         color:bisque;
+    }
+    .bg-black{
+        background-color: black;
+        color:azure
+    }
+</style>
+<body class="bg-black">
+    <div>
+        <h1 id="heading" class="heading">DOM Element Creation Learning <span style="display:none"> baigan </span></h1>
+        <div class="parent">
+            <div class="day"><span style="display:none">Day - 1</span> Monday </div>
+            <div class="day"><span style="display:none">Day - 2</span> Tuesday</div>
+            <div class="day"><span style="display:none">Day - 3</span> Wednesday</div>            
+            <div class="day"><span style="display:none">Day - 4</span> Thursday</div>
+            <div class="day"><span style="display:none">Day - 5</span> Friday</div>
+        </div>
+        <div class="languages" style="border: 1px solid grey; padding: 5px;"></div>
+    </div>
+</body>
+<script>
+    const languagesClass = document.querySelector('.languages');
+    //addLanguage(languagesClass, 3);
+    const languageArr = ["Javascript", "Python", "Java", "C++"];
+
+    //addOptionLanguage(languagesClass, 'JavaScript');
+    //addOptionLanguage(languagesClass, 'Python');
+    //languageArr.forEach( (lang) => addOptionLanguage(languagesClass, lang) )
+    
+    languageArr.forEach( (lang) => {
+        const li = document.createElement('li');
+        li.textContent = lang;
+        languagesClass.appendChild(li);
+    })
+
+    function addLanguage(parentToBeAddedUnder, liCount){
+        const ul = document.createElement('ul');
+        ul.style.fontStyle = 'italic';
+        //ul.style.fontWeight= 'bold';
+        ul.innerHTML = 'Languages';
+        //li.innerText = liHTML1; //ignore
+
+        for(let i = 0; i<liCount; i++){
+            const li = document.createElement('li');
+            li.innerHTML = `li-${i}`;
+            ul.appendChild(li);
+        }
+        parentToBeAddedUnder.appendChild(ul);
+    }
+
+    //function addOptionLanguage(parentToBeAddedUnder, language){
+    function addOptionLanguage(parentToBeAddedUnder, language){
+        const li = document.createElement('li');
+        //li.appendChild(document.createTextNode(language));
+        li.textContent = language;
+        parentToBeAddedUnder.appendChild(li);
+    }
+</script>
+</html>
