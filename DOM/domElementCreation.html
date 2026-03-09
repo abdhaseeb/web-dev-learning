@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<style>
+    .bg-grey{
+         background-color: grey;
+         color:bisque;
+    }
+    .bg-black{
+        background-color: black;
+        color:azure
+    }
+</style>
+<body class="bg-black">
+    <div>
+        <h1 id="heading" class="heading">DOM Element Creation Learning <span style="display:none"> baigan </span></h1>
+        <div class="parent">
+            <div class="day"><span style="display:none">Day - 1</span> Monday </div>
+            <div class="day"><span style="display:none">Day - 2</span> Tuesday</div>
+            <div class="day"><span style="display:none">Day - 3</span> Wednesday</div>            
+            <div class="day"><span style="display:none">Day - 4</span> Thursday</div>
+            <div class="day"><span style="display:none">Day - 5</span> Friday</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const parent = document.querySelector('.parent')
+    // //console.log(parent.children[0].innerText);
+    parent.style.backgroundColor = 'green';
+    parent.style.padding = '10px';
+    parent.style.borderRadius = '10px'
+    parent.style.border = '1px solid white'
+    // const wedn = parent.children[2]
+    // wedn.backgroundColor = 'blue'
+    // console.log(wedn.previousElementSibling)
+
+    // for(let i = 0; i< parent.children.length; i++){
+    //     parent.children[i].style.border = '1px solid lightgreen'
+    // }
+
+    createDay(parent, 6, 'Saturday');
+    createDay(parent, 7, 'Sunday');
+    function createDay(parent, dayNumber, day){
+        const div = document.createElement('div');
+
+        div.className = 'day';
+        div.id = `day-${dayNumber}`
+        div.setAttribute("title", "createdDay");
+        div.style.fontStyle = 'italic';
+        //div.style.padding = '1px';
+        //div.innerHTML = '<p>Div created thru doc.createElement </p>'; //incorrect
+        
+        //const p = document.createElement('p');
+        //p.innerHTML = '<span style="display: none">Day - 5</span> Saturday'
+        //p.innerHTML = `<span style="display: none">Day - ${dayNumber}</span> ${day}`;
+        
+        div.innerHTML = `<span style="display: none">Day - ${dayNumber}</span> ${day}`;
+        parent.appendChild(div);
+    }
+
+</script>
+
+</html>
