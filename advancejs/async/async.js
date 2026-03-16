@@ -37,7 +37,7 @@ async function getData(){
 //getData();
 
 
-const p1 = new Promise( (resolve, reject) => {
+const p1 = new Promise( (resolve, reject) => { 
     setTimeout( ()=>{
         resolve('P1 fulfilled')
     }, 3000);
