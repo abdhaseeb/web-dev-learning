@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce + Throttle</title>
+
+    <style>
+        body {
+            height: 2000px; /* 👈 for scroll */
+        }
+    </style> 
+</head>
+
+<body>
+    <label>Search Bar</label>
+    <input type = 'text' id='searchInput'/>
+
+    <h2>Scroll down ↓</h2>
+
+    <script src="debouncing.js"></script>
+    <script src="throttling.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        document
+            .getElementById("searchInput")
+            .addEventListener("keyup", debouncingFunction);
+        });
+    </script>
+</body>
+</html>
