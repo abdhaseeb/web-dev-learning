@@ -16,3 +16,16 @@ function delayGetData(fxn, delay){
 }
 
 window.debouncingFunction = delayGetData(getData, 500);
+
+//custom implementation
+function debounce(fxn, delay){
+    let timer;
+
+    return function(...args){
+        clearTimeout(timer);
+        timer = setTimeout( () => {
+            fxn(...args);
+        }, delay)
+    }
+}
+//window.debouncingFunction = debounce(getData, 500);
